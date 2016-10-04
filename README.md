@@ -13,5 +13,8 @@ Use cases:
 - data enrichment
 - complex sessions, continuous learning
 
+### Data Firehose
+- <http://www.meetup.com/meetup_api/docs/stream/2/rsvps/#websockets>
+
 ### Resources
 - <https://www.datanami.com/2015/11/30/spark-streaming-what-is-it-and-whos-using-it/>
