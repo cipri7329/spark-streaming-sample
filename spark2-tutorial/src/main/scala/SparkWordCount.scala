@@ -8,17 +8,47 @@ import org.apache.spark.SparkConf
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 
+object ScalaApiPlayground{
+
+  def main(args:Array[String]) : Unit = {
+
+    val str = "here|are|more|values|";
+
+
+    println(str);
+    println()
+    val arraySplit = str.split('|')
+
+    arraySplit.foreach(x => print(x + " "))
+
+    val elements = arraySplit.toList
+
+    println()
+    println(elements)
+
+    println(str.split('|').toList)
+  }
+
+}
+
+
 object SparkWordCount1 {
 
   def main(args:Array[String]) : Unit = {
     System.setProperty("hadoop.home.dir", "D:\\hadoop\\hadoop-common-2.2.0-bin-master\\")
     val conf = new SparkConf().setAppName("SparkWordCount").setMaster("local[*]")
     val sc = new SparkContext(conf)
-    val tf = sc.textFile(args(0))
+//    val tf = sc.textFile(args(0))
+
+    val tf = sc.parallelize(List("ana", "bob", "jack", "cip", "dan"))
+
+
     val splits = tf.flatMap(line => line.split(" ")).map(word =>(word,1))
     val counts = splits.reduceByKey((x,y)=>x+y)
-    splits.saveAsTextFile(args(1))
-    counts.saveAsTextFile(args(2))
+
+    println(counts.first)
+//    splits.saveAsTextFile(args(1))
+//    counts.saveAsTextFile(args(2))
   }
 
 }
