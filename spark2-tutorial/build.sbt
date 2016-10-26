@@ -6,10 +6,10 @@ scalaVersion := "2.11.8"
 
 val overrideScalaVersion = "2.11.8"
 //val sparkVersion = "2.0.0"
-val sparkVersion = "1.6.1"
+val sparkVersion = "1.6.0"
 
-val sparkXMLVersion = "0.3.3"
-val sparkCsvVersion = "1.4.0"
+val sparkXMLVersion = "0.3.4"
+val sparkCsvVersion = "1.5.0"
 val sparkElasticVersion = "2.3.4"
 val sscKafkaVersion = "1.6.2"
 val sparkMongoVersion = "1.0.0"
@@ -28,7 +28,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark"      %% "spark-hive"       % sparkVersion,
   "org.apache.spark"      %% "spark-yarn"       % sparkVersion,
   "com.databricks"        %% "spark-xml"        % sparkXMLVersion,
-  "com.databricks"        %% "spark-csv"        % sparkCsvVersion,
+  "com.databricks"        %% "spark-csv"        % sparkCsvVersion   withSources(),
   "org.apache.spark"      %% "spark-graphx"     % sparkVersion,
   "org.apache.spark"      %% "spark-catalyst"   % sparkVersion,
   "org.apache.spark"      %% "spark-streaming"  % sparkVersion,
