@@ -1,4 +1,4 @@
-package com.ness.lochness.sample
+package com.tutorial.lake.sample
 
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -20,7 +20,7 @@ object ZeppelinPlayground1 {
     val conf = new SparkConf().setAppName("zeppelinplayground1").setMaster("local[*]")
     val sc = new SparkContext(conf)
 
-    val moviesDump = sc.textFile("hdfs://rotsrlxdv01:8020/user/datalake/movies/ml-latest/movies.csv")
+    val moviesDump = sc.textFile("hdfs://localhost:8020/user/datalake/movies/ml-latest/movies.csv")
 
     case class Movie(movieId: Integer, title: String, genres: List[String])
 
