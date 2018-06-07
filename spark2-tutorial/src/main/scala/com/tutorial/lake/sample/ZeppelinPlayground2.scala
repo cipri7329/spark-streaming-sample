@@ -161,7 +161,6 @@ object ZeppelinPlayground2 {
     movieLensDF.show()
 
 
-
     movieLensDF.filter($"id" > 715 && $"id" < 740).foreach(println)
 
 //    movieLensDF.write.mode(SaveMode.Overwrite).parquet("hdfs://localhost:8020/user/datalake/movies/ml-latest/movieitems-lens.parquet")
